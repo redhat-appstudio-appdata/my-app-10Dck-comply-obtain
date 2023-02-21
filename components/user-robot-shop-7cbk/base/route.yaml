@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: user-robot-shop-7cbk
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: user-robot-shop-7cbk
+    app.kubernetes.io/part-of: my-app
+  name: user-robot-shop-7cbk
+  namespace: srevivo-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: user-robot-shop-7cbk
+    weight: 100
+status: {}

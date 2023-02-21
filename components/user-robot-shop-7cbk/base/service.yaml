@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: user-robot-shop-7cbk
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: user-robot-shop-7cbk
+    app.kubernetes.io/part-of: my-app
+  name: user-robot-shop-7cbk
+  namespace: srevivo-tenant
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: user-robot-shop-7cbk
+status:
+  loadBalancer: {}
