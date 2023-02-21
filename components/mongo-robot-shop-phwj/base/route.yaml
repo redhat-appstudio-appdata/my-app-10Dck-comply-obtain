@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: mongo-robot-shop-phwj
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: mongo-robot-shop-phwj
+    app.kubernetes.io/part-of: my-app
+  name: mongo-robot-shop-phwj
+  namespace: srevivo-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: mongo-robot-shop-phwj
+    weight: 100
+status: {}
