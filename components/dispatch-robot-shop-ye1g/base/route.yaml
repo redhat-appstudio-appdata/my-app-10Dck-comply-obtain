@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: dispatch-robot-shop-ye1g
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: dispatch-robot-shop-ye1g
+    app.kubernetes.io/part-of: my-app
+  name: dispatch-robot-shop-ye1g
+  namespace: srevivo-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: dispatch-robot-shop-ye1g
+    weight: 100
+status: {}
