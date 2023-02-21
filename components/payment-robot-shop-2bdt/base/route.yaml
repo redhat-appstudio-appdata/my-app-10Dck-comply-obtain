@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: payment-robot-shop-2bdt
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: payment-robot-shop-2bdt
+    app.kubernetes.io/part-of: my-app
+  name: payment-robot-shop-2bdt
+  namespace: srevivo-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: payment-robot-shop-2bdt
+    weight: 100
+status: {}
